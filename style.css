@@ -1,0 +1,283 @@
+/* Browser Reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Base element styles */
+body {
+  font-family: "Varela Round", sans-serif;
+  line-height: 1.6;
+  color: #252424;
+}
+
+header,
+.intro {
+  background: #f7f7f7;
+}
+
+p {
+  font-size: 0.95em;
+  margin-bottom: 1.8em;
+}
+
+h2,
+h3 {
+  margin-top: 0.8em;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%; /* whatever the parent container is the image will take up the whole width of the parent*/
+}
+
+figure {
+  margin: 0;
+  line-height: 0;
+  /* position: relative; */
+}
+
+/* =======================
+   Base Layout Styles 
+======================== */
+
+/* Navigation  */
+.name {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+nav {
+  margin-top: 0.25em;
+}
+
+.name a,
+nav a {
+  text-align: center;
+  display: block; /* makes the link target the width of the parent */
+  padding: 0.5em 1em; /* makes the space for the link target larger */
+}
+
+nav a {
+  font-size: 0.95em;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: #093a58;
+}
+/* Layout Containers */
+
+.intro {
+  padding-bottom: 2em;
+}
+
+.my-pic {
+  text-align: center;
+  padding: 3.2em 3.2em 0 3.2em;
+}
+
+.blurb {
+  padding: 0 1em;
+  text-align: center;
+}
+
+/* Page Elements */
+.portfolio-container {
+  /* width: 90%; */
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  padding: 1em;
+}
+.portfolio-container h2 {
+  text-transform: uppercase;
+}
+
+.synopsis {
+  margin-top: 0;
+}
+
+/* Contact Info */
+.contact-container {
+  background: #f7f7f7;
+  padding: 3em 1em 1em 1em;
+  text-align: center;
+}
+.contact-container h2 {
+  text-transform: uppercase;
+}
+
+.line-container {
+  margin: 0 1em;
+  border-bottom: 0.125em solid #d8d8d8;
+}
+
+/* Footer */
+footer p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1em;
+}
+
+footer {
+  padding: 2em 1em;
+  background: #f7f7f7;
+  font-weight: bold;
+}
+
+.mobile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.not-mobile {
+  display: none;
+}
+
+/**********************/
+/* Tablet Media Query */
+/**********************/
+
+@media (min-width: 48em) {
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  .intro img {
+    grid-area: picture;
+    padding: 0 1.5em 0 0;
+    margin: 0 0 4em 0;
+  }
+
+  .intro p {
+    grid-area: description;
+    padding: 1.5em 0 0 1.5em;
+    text-align: left;
+    font-size: 1em;
+  }
+
+  .intro {
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    grid-template-areas: "description picture";
+    grid-column-gap: 1em;
+    padding-top: 3.2em;
+  }
+
+  .portfolio-container h2 {
+    grid-area: portfolio;
+    text-align: center;
+  }
+
+  .marketing-page {
+    grid-area: marketing;
+    padding-left: 1.5em;
+  }
+
+  .search-page {
+    grid-area: search;
+    padding-right: 1.5em;
+  }
+
+  .travel-app {
+    grid-area: travel;
+    padding-left: 1.5em;
+  }
+
+  .favorite-spots {
+    grid-area: favorites;
+    padding-right: 1.5em;
+  }
+
+  .photo-gallery {
+    grid-area: photo;
+    padding-left: 1.5em;
+  }
+
+  .calculator {
+    grid-area: calculator;
+    padding-right: 1.5em;
+  }
+
+  .portfolio-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content repeat(3, 1fr);
+    grid-gap: 1em;
+    grid-template-areas: "portfolio portfolio" "marketing search"
+      "travel favorites" "photo calculator";
+    margin-bottom: 2em;
+  }
+
+  .interested {
+    padding-left: 10em;
+    padding-right: 10em;
+  }
+
+  .contact-container {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .line-container {
+    margin: 0 1.5em;
+  }
+  .mobile {
+    display: none;
+  }
+  .not-mobile {
+    display: flex;
+    justify-content: space-between;
+  }
+  .not-mobile p {
+    margin-top: 0.25em;
+    padding: 0.5em 1em; /* makes the space for the link target larger */
+  }
+} /* end media query for 48em */
+
+/**********************/
+/* Laptop Media Query */
+/**********************/
+@media (min-width: 64em) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .portfolio-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content repeat(2, 1fr);
+    grid-gap: 1.5em;
+    grid-template-areas: "portfolio portfolio portfolio"
+      "marketing search travel" "favorites photo calculator";
+    margin-bottom: 2em;
+  }
+  .search-page {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .travel-app {
+    padding-left: 0;
+    padding-right: 1.5em;
+  }
+
+  .favorite-spots {
+    padding-left: 1.5em;
+    padding-right: 0;
+  }
+
+  .photo-gallery {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+  .interested,
+  .personal-info {
+    font-size: 1.3em;
+  }
+} /* end laptop media query */
